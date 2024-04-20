@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/plugins/client/melos_client.iml" filepath="$PROJECT_DIR$/plugins/client/melos_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/dependency_injection/melos_dependency_injection.iml" filepath="$PROJECT_DIR$/plugins/dependency_injection/melos_dependency_injection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/izlogging/melos_izlogging.iml" filepath="$PROJECT_DIR$/plugins/izlogging/melos_izlogging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/serialization/melos_serialization.iml" filepath="$PROJECT_DIR$/plugins/serialization/melos_serialization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/texoit/melos_texoit.iml" filepath="$PROJECT_DIR$/texoit/melos_texoit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_texoit.iml" filepath="$PROJECT_DIR$/melos_texoit.iml" />
+    </modules>
+  </component>
+</project>

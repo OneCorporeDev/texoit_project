@@ -1,0 +1,5 @@
+name: texo_it_workspace
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+dev_dependencies:
+  melos: 4.1.0
