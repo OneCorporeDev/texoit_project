@@ -1,8 +1,3 @@
----
-runme:
-  id: 01HVYF2BWX0FG9F5EQ1EMTR6HN
-  version: v3
----
 
 # TEXOIT
 
