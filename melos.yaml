@@ -1,0 +1,42 @@
+name: texoit
+
+packages:
+  - "texoit/"
+  - plugins/*
+
+scripts:
+  run: melos exec --fail-fast -- "flutter analyze --no-fatal-infos --no-fatal-warnings"
+  description: Run `flutter analyze` in all packages
+
+  clean:
+    run: melos exec -- "flutter clean"
+    description: Run `flutter clean` in all packages
+
+  test:
+    # Only run the test command when the package has a test directory
+    run: melos exec --dir-exists=test -- "flutter test"
+    description: Run `flutter test` in all packages
+
+  test-fail_fast:
+    run: melos exec --dir-exists=test --fail-fast -- flutter test
+    description: Run `flutter test` in all packages. Terminate the command if a test fails
+
+  coverage:
+    run: |
+      melos exec --dir-exists=test -- "flutter test --coverage"
+    description:
+      Generates an HTML code coverage report
+      # melos exec --dir-exists=test -c 1 -- "\$MELOS_ROOT_PATH/tool/combine_coverage.sh"
+  web_deploy:
+    run: |
+      melos exec --dir-exists=web -- "flutter build web --web-renderer html --release"
+      # melos exec --dir-exists=web -- "firebase deploy --only hosting"
+    description: Build web for for release
+  android_deploy:
+    run: |
+      melos exec --dir-exists=android -- "flutter build apk"
+    description: Build apk for debug
+
+  cache_repair:
+    run: melos exec -- "flutter pub cache repair"
+    description: Repair all pub caches
