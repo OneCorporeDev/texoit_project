@@ -1,0 +1,18 @@
+name: client
+description: "A new Flutter package project."
+version: 0.0.1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_test:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+
+flutter:
