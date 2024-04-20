@@ -1,14 +1,26 @@
 name: texoit
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
+  dio: ^5.4.3+1
   flutter:
     sdk: flutter
+  get: ^4.6.6
+  # Local dependencies
+  client:
+    path: ../plugins/client
+  dependency_injection:
+    path: ../plugins/dependency_injection
+  izlogging:
+    path: ../plugins/izlogging
+  serialization:
+    path: ../plugins/serialization
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
