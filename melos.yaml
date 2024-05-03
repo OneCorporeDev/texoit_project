@@ -25,7 +25,7 @@ scripts:
     run: |
       melos exec --dir-exists=test -- "flutter test --coverage"
     description:
-      Generates an HTML code coverage report
+      Generates an code coverage report
       # melos exec --dir-exists=test -c 1 -- "\$MELOS_ROOT_PATH/tool/combine_coverage.sh"
   web_deploy:
     run: |
