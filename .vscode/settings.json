@@ -1,3 +1,23 @@
 {
-  "cSpell.words": ["izlogging", "Texo", "texoit"]
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "cSpell.words": [
+    "CNPJ",
+    "cupertino",
+    "exeption",
+    "fenix",
+    "Geolocator",
+    "Getx",
+    "impls",
+    "Izio",
+    "izpay",
+    "mixpanel",
+    "mocktail",
+    "pkce",
+    "Pkce",
+    "Splited",
+    "Svgs",
+    "swipped",
+    "Zlogging"
+  ]
 }
