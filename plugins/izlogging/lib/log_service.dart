@@ -18,7 +18,7 @@ abstract class Log {
   void logNetworkResponse({
     required String url,
     required Map<String, Object?>? bodyRequest,
-    required Map<String, Object?>? bodyResponse,
+    required dynamic bodyResponse,
     required int statusCode,
     required String method,
     required Map<String, Object?> headers,
