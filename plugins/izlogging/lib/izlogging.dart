@@ -4,4 +4,4 @@
 library izlogging;
 
 export 'log_service.dart';
-export 'implementations/crashlytics_log_provider.dart';
+export 'implementations/iz_log_provider.dart';
