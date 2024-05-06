@@ -36,24 +36,46 @@ class MoviesPage extends GetResponsiveView<MoviesController> {
                       child: Column(
                         children: [
                           const SizedBox(height: 16),
-                          TextFormField(
-                            initialValue: '2018',
-                            keyboardType: TextInputType.number,
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                            ],
-                            onChanged: (value) {
-                              if (value.isEmpty) return;
-                              if (int.parse(value) < 1900 || int.parse(value) > DateTime.now().year) {
-                                return;
-                              }
-                              controller.pageRequest.value = controller.pageRequest.value.copyWith(
-                                page: 0,
-                              );
+                          SizedBox(
+                            height: 100,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: TextFormField(
+                                    initialValue: '2018',
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      FilteringTextInputFormatter.digitsOnly,
+                                    ],
+                                    onChanged: (value) {
+                                      if (value.isEmpty) return;
+                                      if (int.parse(value) < 1900 || int.parse(value) > DateTime.now().year) {
+                                        return;
+                                      }
+                                      controller.pageRequest.value = controller.pageRequest.value.copyWith(
+                                        page: 0,
+                                      );
 
-                              controller.selectedYear.value = int.parse(value);
-                              controller.getPaginatedMovies(0);
-                            },
+                                      controller.selectedYear.value = int.parse(value);
+                                      controller.getPaginatedMovies(0);
+                                    },
+                                  ),
+                                ),
+                                const Expanded(child: SizedBox()),
+                                const Text("Winner:"),
+                                Obx(() {
+                                  return Switch(
+                                      value: controller.winnerFilter.value,
+                                      onChanged: (_) {
+                                        controller.pageRequest.value = controller.pageRequest.value.copyWith(
+                                          page: 0,
+                                        );
+                                        controller.winnerFilter.value = !controller.winnerFilter.value;
+                                        controller.getPaginatedMovies(0);
+                                      });
+                                })
+                              ],
+                            ),
                           ),
                           // Pagination buttons
                           Obx(() {
@@ -100,8 +122,9 @@ class MoviesPage extends GetResponsiveView<MoviesController> {
                                   TableCell(
                                     child: Text('Year'),
                                   ),
-                                  TableText('Winner'),
+                                  TableText('Movie'),
                                   TableText('Studios'),
+                                  TableText('Winner'),
                                 ]),
                                 ...controller.paginatedMovies.value.items.map(
                                   (movie) {
@@ -116,6 +139,7 @@ class MoviesPage extends GetResponsiveView<MoviesController> {
                                         TableText('${movie.year}'),
                                         TableText(movie.producers.join(', ')),
                                         TableText(movie.studios.join(', ')),
+                                        TableText(movie.winner.toString()),
                                       ],
                                     );
                                   },
